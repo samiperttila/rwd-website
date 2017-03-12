@@ -20,5 +20,4 @@
     $('.nav-text').click(function () {
         $('.top-nav > ul').toggleClass('show-menu', 'slow');  // slowi pitää viä tehä
     });
-    
 });
