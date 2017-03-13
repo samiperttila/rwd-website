@@ -135,15 +135,17 @@ article .ads {
 }
 
 .post-text h2 {
-  color: #fff;
+  color: inherit;
   font-weight:100;
   margin: 0em 0em 0.5em 0em;
   opacity: 1;
   transition: opacity 0.20s linear 0s;
   text-align:center;
 }
+.post-text a {color:inherit;}
 
 .post-text p {
+    color:inherit;
 	font-size: 0.9em;
 	opacity: 0.6;
 }
