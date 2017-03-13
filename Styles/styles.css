@@ -61,11 +61,7 @@ header{
     position:absolute;
     background-color:inherit;
 }
-.top-ul li:last-child ul {
-    position:absolute;
-    left:-15%;
-    background-color:inherit;
-}
+
 .top-ul li {
     float:left;
     list-style:none;
@@ -223,6 +219,10 @@ footer a, a:visited{
     display:block;
     line-height:1.6;
     text-decoration:underline;
+    transition:color 0.20s linear 0s;
+}
+footer a:hover{
+    color:red;
 }
 footer p {
 	font-size: 0.9em;
@@ -318,6 +318,9 @@ footer h4 {
     top:0%;
     width:100%;
     }
+    .top-ul li:last-child ul {
+    left:-15%;
+    }
 }
 @media screen and (min-width:1367px){
     .l-1 {width:8.3333%;}
@@ -385,14 +388,10 @@ footer h4 {
         height: auto;
     }
     .top-nav .top-ul ul {
-        left: 0;
         margin-top: 0;
         position: relative;
-        right: 0;
     }
-    .top-nav li ul li a {
-        min-width: 100%;
-    }
+    .top-nav li ul li a {min-width: 100%;}
     .top-nav .top-ul li {
         float: none;
         border:none;
@@ -402,11 +401,11 @@ footer h4 {
     }
     .top-nav .top-ul li a {
         display: block;
-        padding: 1.25em 0.625em;
+        padding: 0.6em;
         text-align: center;
     }
 
-    .top-nav .top-ul ul, .top-ul ul ul{
+    .top-ul ul ul{  /* sub-sub menut*/
         display: block;
         overflow: hidden;
         height: 0;
@@ -429,19 +428,12 @@ footer h4 {
     .nav-text {
         color:#ff9414;
         display: block;
-        font-size: 1.2rem;
-        line-height: 3;
-        margin-right: 0.625rem;
         max-width: 100%;
         text-align: center;
-        vertical-align: middle;
     }
     .nav-text:hover, .nav-text:active {color:#ff1e1e;}
     .nav-text:after {
         content: "\2630";
-        font-size: 1.1rem;
-        margin-left: 0.5rem;
-        text-align: right;
     }
 }
 @media screen and (max-width:480px) {
