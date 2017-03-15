@@ -18,6 +18,6 @@
     });
     //Mobile aside navigation  
     $('.nav-text').click(function () {
-        $('.top-nav > ul').toggleClass('show-menu', 'slow');  // slowi pitää viä tehä
+        $('.top-nav > ul').toggleClass('show-menu', 'slow');  // slowi uupuu
     });
 });
