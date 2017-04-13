@@ -1,23 +1,31 @@
 ﻿jQuery(document).ready(function ($) {
-    $('.top-nav > ul > li ul').each(function (index, element) {
-        var count = $(element).find('li').length;
-        var content = '<span class="count-number"> ' + count + '</span>';
-        $(element).closest('li').children('a').append(content);
-    });
     $('.top-nav > ul li:has(ul)').addClass('submenu');
-    $('.top-nav > ul ul li:has(ul)').addClass('sub-submenu').removeClass('submenu');
-    $('.top-nav > ul li.submenu > a').attr('aria-haspopup', 'true').click(function () {
+    $('.top-nav > ul li.submenu > a').click(function () {
         //Close other open sub menus
-        $('.top-nav > ul li.submenu > ul').removeClass('show-ul', 'slow');
-        $('.top-nav > ul li.submenu:hover > ul').toggleClass('show-ul', 'slow');
-    });
-    $('.top-nav > ul ul > li.sub-submenu > a').attr('aria-haspopup', 'true').click(function () {
-        //Close other open sub menus
-        $('.top-nav ul ul li > ul').removeClass('show-ul', 'slow');
-        $('.top-nav ul ul li:hover > ul').toggleClass('show-ul', 'slow');
+        $('.top-nav > ul li.submenu > ul').removeClass('show-ul');
+        $('.top-nav > ul li.submenu:hover > ul').toggleClass('show-ul');
     });
     //Mobile aside navigation  
     $('.nav-text').click(function () {
-        $('.top-nav > ul').toggleClass('show-menu', 'slow');  // slowi uupuu
+        $('.top-nav > ul').toggleClass('show-menu');
+        $('.top-nav > ul li.submenu > ul').removeClass('show-ul');
     });
 });
+
+/* Ei jQuery-versio, keskeneräinen
+window.onload = function () {
+    var a = document.querySelector('.top-nav > ul li');
+    if (a.querySelector('ul') != null)
+    { a.className += "submenu"; }
+    document.querySelector('.top-nav > ul li.submenu > a').addEventListener("click", function( event ) {
+        var c = document.querySelector('.top-nav > ul li.submenu > ul');
+        c.className = "";
+        var d = document.querySelector('.top-nav > ul li.submenu:hover > ul');
+        d.classList.toggle('show-ul');
+    }, false);
+    document.getElementById('nav-icon').addEventListener("click", function( event ) {
+        var e = document.querySelector('.top-nav > ul');
+        e.classList.toggle('show-menu');  // slowi luokka tekemättä
+    }, false);
+}
+*/
